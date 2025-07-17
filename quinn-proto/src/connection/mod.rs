@@ -1251,7 +1251,7 @@ impl Connection {
                     self.kill(ConnectionError::TimedOut);
                 }
                 Timer::KeepAlive => {
-                    trace!("sending keep-alive");
+                    warn!("sending keep-alive");
                     self.ping();
                 }
                 Timer::LossDetection => {
