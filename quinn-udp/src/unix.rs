@@ -1018,7 +1018,7 @@ mod gro {
 /// Returns whether the given socket option is supported on the current platform
 ///
 /// Yields `Ok(true)` if the option was set successfully, `Ok(false)` if setting
-/// the option raised an `ENOPROTOOPT` error, and `Err` for any other error.
+/// the option raised an `ENOPROTOOPT` or `EOPNOTSUPP` error, and `Err` for any other error.
 fn set_socket_option_supported(
     socket: &impl AsRawFd,
     level: libc::c_int,
